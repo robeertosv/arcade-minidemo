@@ -13,12 +13,12 @@ import random
 import arcade
 
 # --- Constants ---
-SPRITE_SCALING_PLAYER = 0.5
+SPRITE_SCALING_PLAYER = 2
 SPRITE_SCALING_COIN = .25
-COIN_COUNT = 50
+COIN_COUNT = 500
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
 SCREEN_TITLE = "Sprite Collect Coins Example"
 
 
@@ -41,7 +41,7 @@ class MyGame(arcade.Window):
         # Don't show the mouse cursor
         self.set_mouse_visible(False)
 
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.PINK_PEARL)
 
     def setup(self):
         """ Set up the game and initialize the variables. """
