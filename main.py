@@ -13,13 +13,13 @@ import random
 import arcade
 
 # --- Constants ---
-SPRITE_SCALING_PLAYER = 2
+SPRITE_SCALING_PLAYER = 0.25
 SPRITE_SCALING_COIN = .25
-COIN_COUNT = 500
+COIN_COUNT = 100
 
 SCREEN_WIDTH = 1920
 SCREEN_HEIGHT = 1080
-SCREEN_TITLE = "Sprite Collect Coins Example"
+SCREEN_TITLE = "Real Life Cloud Simulator"
 
 
 class MyGame(arcade.Window):
@@ -52,10 +52,7 @@ class MyGame(arcade.Window):
 
         # Score
         self.score = 0
-
-        # Set up the player
-        # Character image from kenney.nl
-        img = ":resources:images/animated_characters/female_person/femalePerson_idle.png"
+        img = "./descarga.png"
         self.player_sprite = arcade.Sprite(img, SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
@@ -63,12 +60,13 @@ class MyGame(arcade.Window):
 
         # Create the coins
         for i in range(COIN_COUNT):
-
-            # Create the coin instance
-            # Coin image from kenney.nl
-            coin = arcade.Sprite(":resources:images/items/coinGold.png",
-                                 SPRITE_SCALING_COIN)
-
+            x = random.randint(1,4)
+            if x == 1:
+                coin = arcade.Sprite("shit.png", SPRITE_SCALING_COIN)
+            elif x==2:
+                coin = arcade.Sprite("cacota.png", SPRITE_SCALING_COIN/3)
+            else:
+                coin = arcade.Sprite("ibm.png", SPRITE_SCALING_COIN)
             # Position the coin
             coin.center_x = random.randrange(SCREEN_WIDTH)
             coin.center_y = random.randrange(SCREEN_HEIGHT)
